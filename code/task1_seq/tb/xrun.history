@@ -1,0 +1,86 @@
+s1(19Jun2025:09:49:45):  xrun -f file.f 
+s2(19Jun2025:09:52:32):  xrun -f file.f 
+s3(19Jun2025:09:55:39):  xrun -f file.f 
+s4(19Jun2025:09:56:30):  xrun -f file.f 
+s5(19Jun2025:10:01:06):  xrun -f file.f 
+s6(19Jun2025:10:04:39):  xrun -f file.f 
+s7(19Jun2025:10:11:12):  xrun -f file.f 
+s8(19Jun2025:10:13:01):  xrun -f file.f 
+s9(19Jun2025:10:13:45):  xrun -f file.f -uvm 
+s10(19Jun2025:10:15:13):  xrun -f file.f -uvm 
+s11(19Jun2025:10:15:41):  xrun -f file.f -uvm 
+s12(19Jun2025:10:16:14):  xrun -f file.f -uvm 
+s13(19Jun2025:10:18:12):  xrun -f file.f -uvm 
+s14(19Jun2025:10:19:26):  xrun -f file.f -uvm 
+s15(19Jun2025:12:37:54):  xrun -f file.f -uvm 
+s16(19Jun2025:12:38:25):  xrun -f file.f -uvm 
+s17(19Jun2025:12:40:29):  xrun -f file.f -uvm 
+s18(19Jun2025:12:42:00):  xrun -f file.f 
+s19(19Jun2025:12:42:32):  xrun -f file.f 
+s20(19Jun2025:12:44:21):  xrun -f file.f 
+s21(19Jun2025:12:45:47):  xrun -f file.f 
+s22(20Jun2025:09:59:05):  xrun -f file.f 
+s23(20Jun2025:10:00:22):  xrun -f file.f 
+s24(20Jun2025:10:01:10):  xrun -f file.f 
+s25(20Jun2025:10:02:14):  xrun -f file.f 
+s26(20Jun2025:10:02:50):  xrun -f file.f 
+s27(20Jun2025:10:03:30):  xrun -f file.f 
+s28(20Jun2025:10:04:09):  xrun -f file.f 
+s29(20Jun2025:10:04:54):  xrun -f file.f 
+s30(20Jun2025:10:30:05):  xrun -f file.f 
+s31(20Jun2025:14:28:43):  xrun -f file.f 
+s32(20Jun2025:14:29:39):  xrun -f file.f 
+s33(20Jun2025:14:30:08):  xrun -f file.f 
+s34(20Jun2025:14:30:27):  xrun -f file.f 
+s35(20Jun2025:14:32:27):  xrun -f file.f 
+s36(20Jun2025:14:32:45):  xrun -f file.f 
+s37(20Jun2025:14:33:13):  xrun -f file.f -uvm 
+s38(20Jun2025:14:35:47):  xrun -f file.f -uvm 
+s39(20Jun2025:14:36:11):  xrun -f file.f 
+s40(20Jun2025:14:40:48):  xrun -f file.f 
+s41(20Jun2025:15:06:39):  xrun -f file.f 
+s42(20Jun2025:17:22:14):  xrun -f file.f 
+s43(20Jun2025:17:24:01):  xrun -f file.f 
+s44(20Jun2025:17:25:20):  xrun -f file.f 
+s45(20Jun2025:17:34:15):  xrun -f file.f 
+s46(25Jun2025:19:59:36):  xrun -f file.f 
+s47(25Jun2025:20:00:22):  xrun -f file.f 
+s48(25Jun2025:20:01:01):  xrun -f file.f 
+s49(25Jun2025:20:01:44):  xrun -f file.f 
+s50(25Jun2025:20:02:12):  xrun -f file.f 
+s51(25Jun2025:20:03:04):  xrun -f file.f 
+s52(25Jun2025:20:03:28):  xrun -f file.f 
+s53(25Jun2025:20:05:01):  xrun -f file.f 
+s54(25Jun2025:20:07:01):  xrun -f file.f 
+s55(25Jun2025:20:17:24):  xrun -f file.f 
+s56(25Jun2025:20:18:39):  xrun -f file.f 
+s57(25Jun2025:23:15:27):  xrun -f file.f 
+s58(25Jun2025:23:42:13):  xrun -f file.f +SVSEED=random 
+s59(25Jun2025:23:54:33):  xrun -f file.f +SVSEED=random 
+s60(25Jun2025:23:57:03):  xrun -f file.f +SVSEED=random +UVM_VERBOSITY 
+s61(25Jun2025:23:58:47):  xrun -f file.f +SVSEED=random +UVM_VERBOSITY=UVM_HIGH 
+s62(26Jun2025:00:00:04):  xrun -f file.f +SVSEED=random 
+s63(26Jun2025:01:04:51):  xrun -f file.f +SVSEED=random 
+s64(26Jun2025:01:12:22):  xrun -f file.f +SVSEED=random 
+s65(26Jun2025:01:15:28):  xrun -f file.f +SVSEED=random 
+s66(26Jun2025:01:16:01):  xrun -f file.f +SVSEED=random 
+s67(26Jun2025:01:16:27):  xrun -f file.f +SVSEED=random 
+s68(26Jun2025:01:21:14):  xrun -f file.f +SVSEED=random 
+s69(26Jun2025:01:22:44):  xrun -f file.f +SVSEED=random 
+s70(26Jun2025:01:25:48):  xrun -f file.f +SVSEED=random 
+s71(26Jun2025:01:26:02):  xrun -f file.f +SVSEED=random 
+s72(26Jun2025:01:29:00):  xrun -f file.f +SVSEED=random 
+s73(26Jun2025:09:23:03):  xrun -f file.f +SVSEED=random 
+s74(26Jun2025:09:23:37):  xrun -f file.f +SVSEED=random 
+s75(26Jun2025:14:01:56):  xrun -f file.f +SVSEED=random 
+s76(26Jun2025:14:12:15):  xrun -f file.f +SVSEED=random 
+s77(26Jun2025:14:13:33):  xrun -f file.f +SVSEED=random 
+s78(26Jun2025:14:13:55):  xrun -f file.f +SVSEED=random 
+s79(26Jun2025:14:14:33):  xrun -f file.f +SVSEED=random 
+s80(26Jun2025:17:09:55):  xrun -f file.f 
+s81(26Jun2025:17:26:07):  xrun -f file.f 
+s82(26Jun2025:17:34:41):  xrun -f file.f 
+s83(26Jun2025:17:35:35):  xrun -f file.f 
+s84(26Jun2025:17:36:10):  xrun -f file.f 
+s85(26Jun2025:17:38:00):  xrun -f file.f 
+s86(26Jun2025:17:41:01):  xrun -f file.f 
