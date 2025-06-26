@@ -76,7 +76,109 @@ class yapp_1_seq extends yapp_base_seq ;
     super.new(name);
   endfunction
 
-  
+  task body();
+    `uvm_info(get_type_name(), "", UVM_LOW);
+    `uvm_do_with(req, {addr == 1;})
+  endtask
 
 endclass: yapp_1_seq
+
+class yapp_012 extends yapp_base_seq;
+  `uvm_object_utils(yapp_012)
+
+  function new(string name = "yapp_012");
+    super.new(name);
+  endfunction
+
+  task body();
+    `uvm_info(get_type_name(), "", UVM_LOW)
+    `uvm_do_with(req, {addr == 1;})
+    `uvm_do_with(req, {addr == 0;})
+    `uvm_do_with(req, {addr == 2;})
+  endtask
+endclass: yapp_012_seq
+
+class yapp_111_seq extends yapp_base_seq;
+    `uvm_object_utils(yapp_111_seq)
+
+    function new(string name = "yapp_111_seq");
+      super.new(name);
+    endfunction
+
+    yapp_1_seq ysa;
+
+    task body();
+    `uvm_info(get_type_name, "", UVM_LOW)
+    `uvm_do(ysa)
+    `uvm_do(ysa)
+    `uvm_do(ysa)
+    endtask
+
+endclass: yapp_111_seq
+
+class yapp_repeat_addr_seq extends yapp_base_seq;
+    `uvm_object_utils(yapp_repeat_addr_seq)
+
+    function new(string name = "yapp_repeat_addr_seq");
+      super.new(name);
+    endfunction
+    int prev_addr;
+    task body();
+      `uvm_info(get_type_name(), "" , UVM_LOW)
+      start_item(req);
+      req.randomize() with {addr != 3;};
+      prev_addr = req.addr;
+      finish_item(req);
+      `uvm_do_with(req, {addr == prev_addr;})
+    endtask
+
+endclass: yapp_repeat_addr_seq
+
+class yapp_incr_payload_seq extends yapp_base_seq;
+    `uvm_object_utils(yapp_incr_payload_seq)
+
+    function new(string name = "yapp_incr_payload_seq");
+      super.new(name);
+    endfunction
+
+    task body();
+      `uvm_info(get_type_name(), "" , UVM_LOW)
+      yapp_packet = pkt;
+      `uvm_create(pkt)
+      if(!pkt.randomize()) begin
+        `uvm_error(get_type_name(), "Randomization Failed")
+        return;
+      end
+      pkt.payload = new[pkt.length];
+      foreach (pkt.payload[i])
+        pkt.payload[i] = i ;
+
+      pkt.set_parity();
+      `uvm_send(pkt)
+    endtask
+
+endclass
+
+class yapp_exhaustive_seq extends yapp_base_seq;
+    `uvm_object_utils(yapp_exhaustive_seq)
+
+    function new(string name = "yapp_exhaustive_seq");
+      super.new(name);
+    endfunction
+    yapp_1_seq ysa1;
+    yapp_012_seq ysa2;
+    yapp_111_seq ysa3;
+    yapp_repeat_addr_seq ysa4;
+    yapp_incr_payload_seq ysa5;
+
+    task body();
+      `uvm_info(get_type_name(), "" , UVM_LOW)
+      `uvm_do(ysa1)
+      `uvm_do(ysa2)
+      `uvm_do(ysa3)
+      `uvm_do(ysa4)
+      `uvm_do(ysa5)
+    endtask
+
+endclass
 
