@@ -5,21 +5,22 @@
 -INPUT
 "@source /home/cc/mnt/XCELIUM2309/tools/methodology/UVM/CDNS-1.1d/additions/sv/files/tcl/uvm_sim.tcl"
 +UVM_VERBOSITY=UVM_HIGH
++SVSEED=random
 -uvmhome
 /home/cc/mnt/XCELIUM2309/tools/methodology/UVM/CDNS-1.1d
 -sv_lib
 /home/cc/mnt/XCELIUM2309/tools/methodology/UVM/CDNS-1.1d/additions/sv/lib/64bit/libuvmpli.so
-+UVM_TESTNAME=exhaustive_seq_test
++UVM_TESTNAME=new_test012
 -SVSEED
--random
+random
+-gui
 -MESSAGES
--RUN
 -SV_LIB
 /home/cc/mnt/XCELIUM2309/tools/methodology/UVM/CDNS-1.1d/additions/sv/lib/64bit/libuvmdpi.so
 +EMGRLOG
 xrun.log
 -XLSTIME
-1751092499
+1751121096
 -XLKEEP
 -XLMODE
 ./xcelium.d/run.lnx8664.23.09.d

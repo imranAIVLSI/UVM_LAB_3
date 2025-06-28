@@ -222,12 +222,12 @@ class yapp_exhaustive_seq extends yapp_base_seq;
 
     task body();
       `uvm_info(get_type_name(), "yapp_exhaustive_seq running....." , UVM_LOW)
-      `uvm_do(ysa1)
-      `uvm_do(ysa2)
-      `uvm_do(ysa3)
-      `uvm_do(ysa4)
-      `uvm_do(ysa5)
-      `uvm_do(ysa6)
+      // `uvm_do(ysa1)
+      // `uvm_do(ysa2)
+      // `uvm_do(ysa3)
+      // `uvm_do(ysa4)
+      // `uvm_do(ysa5)
+      // `uvm_do(ysa6)
       `uvm_do(ysa7)
     endtask
 

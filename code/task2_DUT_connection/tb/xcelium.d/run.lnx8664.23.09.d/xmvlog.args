@@ -13,7 +13,11 @@ UVM_PLI
 -INCDIR
 .
 ../sv/yapp_pkg.sv
-top.sv
+../sv/yapp_if.sv
+clkgen.sv
+yapp_router.sv
+hw_top_no_dut.sv
+tb_top.sv
 -CDSLIB
 ./xcelium.d/run.lnx8664.23.09.d/cdsrun.lib
 -HDLVAR

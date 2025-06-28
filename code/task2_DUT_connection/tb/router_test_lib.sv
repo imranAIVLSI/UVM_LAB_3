@@ -16,6 +16,12 @@ class base_test extends uvm_test;
         `uvm_info("BUILD_PHASE", "Build Phase of Testbench is being executed", UVM_HIGH);
     endfunction
 
+    task run_phase(uvm_phase phase);
+        uvm_objection obj = phase.get_objection();
+        obj.set_drain_time(this, 200ns);
+
+    endtask
+
     function void check_phase(uvm_phase phase);
         super.connect_phase(phase);
         check_config_usage();
@@ -99,3 +105,22 @@ class exhaustive_seq_test extends base_test;
     endfunction
 
 endclass: exhaustive_seq_test
+
+
+class new_test012 extends base_test;
+    `uvm_component_utils(new_test012)
+
+    function new(string name = "new_test012", uvm_component parent);
+        super.new(name, parent);
+    endfunction
+
+    function void build_phase(uvm_phase phase);
+        super.build_phase(phase);
+        uvm_config_wrapper::set(this, "tb.YAPP.agent.sequencer.run_phase",
+                                "default_sequence",
+                                yapp_012_seq::get_type());
+        set_type_override_by_type(yapp_packet::get_type(), short_yapp_packet::get_type());
+    endfunction
+
+
+endclass: new_test012

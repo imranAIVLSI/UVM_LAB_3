@@ -171,19 +171,22 @@ endclass: yapp_incr_payload_seq
 class yapp_rnd_seq extends yapp_base_seq;
   `uvm_object_utils(yapp_rnd_seq)
 
+
+  rand int count;
   function new(string name = "yapp_rnd_seq");
     super.new(name);
   endfunction
 
-  rand int count;
-  // constraint cont {
-  //   count inside {[1:10]};
-  // }
+  constraint cont {
+    count inside {[1:10]};
+  }
+
   task body();
-    int ok;
+    bit ok;
     `uvm_info(get_type_name(), "" , UVM_LOW)
-    ok = randomize() with {count inside {[1:10]};};
+    ok = this.randomize();
     `uvm_info("count", $sformatf("count value is %0d", count), UVM_HIGH)
+    assert(ok);
     repeat(count) begin
       `uvm_do(req)
     end
@@ -198,10 +201,20 @@ class six_yapp_seq extends yapp_base_seq;
   endfunction
 
   yapp_rnd_seq rand_seq;
+  
+  // constraint c6 {
+  //   rand_seq.count == 6;
+  // }
 
   task body();
+    int ok;
     `uvm_info(get_type_name(), "" , UVM_LOW)
-    `uvm_do_with(rand_seq, {count == 6;})
+    `uvm_create(rand_seq)
+    // ok = rand_seq.randomize();
+    // assert(ok);
+    rand_seq.count.rand_mode(0);
+    rand_seq.count = 6 ;
+    `uvm_send(rand_seq)
   endtask
 
 endclass
@@ -222,12 +235,12 @@ class yapp_exhaustive_seq extends yapp_base_seq;
 
     task body();
       `uvm_info(get_type_name(), "yapp_exhaustive_seq running....." , UVM_LOW)
-      `uvm_do(ysa1)
-      `uvm_do(ysa2)
-      `uvm_do(ysa3)
-      `uvm_do(ysa4)
-      `uvm_do(ysa5)
-      `uvm_do(ysa6)
+      // `uvm_do(ysa1)
+      // `uvm_do(ysa2)
+      // `uvm_do(ysa3)
+      // `uvm_do(ysa4)
+      // `uvm_do(ysa5)
+      // `uvm_do(ysa6)
       `uvm_do(ysa7)
     endtask
 

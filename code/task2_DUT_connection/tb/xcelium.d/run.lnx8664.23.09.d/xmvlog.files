@@ -2,5 +2,9 @@
 // File created by:  xrun
 // Do not modify this file
 //
-/home/cc/Downloads/Imran/UVM/UVM_LAB_3/code/task1_seq/sv/yapp_pkg.sv
-/home/cc/Downloads/Imran/UVM/UVM_LAB_3/code/task1_seq/tb/top.sv
+/home/cc/Downloads/Imran/UVM/UVM_LAB_3/code/task2_DUT_connection/sv/yapp_pkg.sv
+/home/cc/Downloads/Imran/UVM/UVM_LAB_3/code/task2_DUT_connection/sv/yapp_if.sv
+/home/cc/Downloads/Imran/UVM/UVM_LAB_3/code/task2_DUT_connection/tb/clkgen.sv
+/home/cc/Downloads/Imran/UVM/UVM_LAB_3/code/task2_DUT_connection/tb/yapp_router.sv
+/home/cc/Downloads/Imran/UVM/UVM_LAB_3/code/task2_DUT_connection/tb/hw_top_no_dut.sv
+/home/cc/Downloads/Imran/UVM/UVM_LAB_3/code/task2_DUT_connection/tb/tb_top.sv

@@ -1,0 +1,102 @@
+
+#
+# Preferences
+#
+preferences set waveform-dont-show-assert-debug-info 1
+preferences set assertbrowser-dont-show-info 1
+preferences set savedlg-dbnames save
+preferences set plugin-enable-svdatabrowser-new 1
+preferences set cursorctl-dont-show-sync-warning 1
+preferences set plugin-enable-groupscope 0
+preferences set plugin-enable-interleaveandcompare 0
+preferences set plugin-enable-waveformfrequencyplot 0
+preferences set waveform-assertion-debug 1
+
+#
+# Mnemonic Maps
+#
+mmap new  -reuse -name {Boolean as Logic} -radix %b -contents {{%c=FALSE -edgepriority 1 -shape low}
+{%c=TRUE -edgepriority 1 -shape high}}
+mmap new  -reuse -name {Example Map} -radix %x -contents {{%b=11???? -bgcolor orange -label REG:%x -linecolor yellow -shape bus}
+{%x=1F -bgcolor red -label ERROR -linecolor white -shape EVENT}
+{%x=2C -bgcolor red -label ERROR -linecolor white -shape EVENT}
+{%x=* -label %x -linecolor gray -shape bus}}
+
+#
+# Design Browser windows
+#
+if {[catch {window new WatchList -name "Design Browser 1" -geometry 1920x1016+-1+26}] != ""} {
+    window geometry "Design Browser 1" 1920x1016+-1+26
+}
+window target "Design Browser 1" on
+browser using {Design Browser 1}
+browser set -scope  simulator::hw_top.dut 
+browser set \
+    -signalsort name
+browser yview see  simulator::hw_top.dut 
+browser timecontrol set -lock 0
+
+#
+# Waveform windows
+#
+if {[catch {window new WaveWindow -name "Waveform 1" -geometry 1920x1016+-1+26}] != ""} {
+    window geometry "Waveform 1" 1920x1016+-1+26
+}
+window target "Waveform 1" on
+waveform using {Waveform 1}
+waveform sidebar select designbrowser
+waveform set \
+    -primarycursor TimeA \
+    -signalnames name \
+    -signalwidth 175 \
+    -units ps \
+    -valuewidth 75
+waveform baseline set -time 0
+
+set id [waveform add -signals  {
+	simulator::hw_top.clkgen.clock
+	} ]
+set id [waveform add -signals  {
+	{simulator::hw_top.dut.in_data[7:0]}
+	} ]
+waveform format $id -radix %b
+set id [waveform add -signals  {
+	{simulator::hw_top.dut.data_0[7:0]}
+	} ]
+set id [waveform add -signals  {
+	{simulator::hw_top.dut.data_1[7:0]}
+	} ]
+set id [waveform add -signals  {
+	{simulator::hw_top.dut.data_2[7:0]}
+	} ]
+set id [waveform add -signals  {
+	{simulator::$uvm:{uvm_test_top.tb.YAPP.agent.driver}.Driver_YAPP_Packet}
+	} ]
+set id [waveform add -signals  {
+	{simulator::$uvm:{uvm_test_top.tb.YAPP.agent.monitor}.Monitor_YAPP_Packet}
+	} ]
+set id [waveform add -signals  {
+	simulator::hw_top.dut.data_vld_0
+	} ]
+set id [waveform add -signals  {
+	simulator::hw_top.dut.data_vld_1
+	} ]
+set id [waveform add -signals  {
+	simulator::hw_top.dut.data_vld_2
+	} ]
+
+waveform xview limits 517886.161ps 709154.073ps
+
+#
+# Waveform Window Links
+#
+
+#
+# Console windows
+#
+console set -windowname Console
+window geometry Console 730x250+261+564
+
+#
+# Layout selection
+#

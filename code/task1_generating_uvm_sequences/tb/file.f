@@ -15,6 +15,6 @@
 top.sv
 +UVM_TESTNAME=exhaustive_seq_test
 +UVM_VERBOSITY=UVM_HIGH
--SVSEED -random
++SVSEED=random
 //*** add compile files here
 
